@@ -59,7 +59,7 @@
                 .on('click', $.proxy(this.handleClick, this))
                 .on('focusin', $.proxy(this.handleFocus, this))
                 .on('focusout', $.proxy(this.handleBlur, this))
-                .width(this.$formInput.width())
+                .width(this.options.width || this.$formInput.width())
                 .insertAfter(this.$formInput);
             this.parseFormInput();
             this.channel.subscribe('add', $.proxy(this.handleAdd, this));
@@ -218,7 +218,7 @@
         constructor: Item,
 
         initialize: function () {
-            this.$icon = $('<i class="icon-remove icon-white"></i>')
+            this.$icon = $('<i class="glyphicon glyphicon-remove-circle"></i>')
                 .on('click', $.proxy(this.handleRemoveClick, this));
             this.$element = $('<span class="label"></span>')
                 .append(this.value)

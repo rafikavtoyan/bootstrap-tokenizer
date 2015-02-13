@@ -43,9 +43,6 @@ div.tokenizer {
   cursor: text;
   background-color: white;
   border: 1px solid #ccc;
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
 }
 
 div.tokenizer.focused {
@@ -59,11 +56,13 @@ div.tokenizer.focused {
 
 div.tokenizer > div {
   overflow: hidden;
+  text-align: left
 }
 
 div.tokenizer ul {
   display: inline;
   margin: 0;
+  padding: 0;
 }
 
 div.tokenizer ul li {

@@ -1,0 +1,21 @@
+{
+  "name": "bootstrap-tokenizer-vertical",
+  "version": "1.0.0",
+  "homepage": "https://github.com/rafikavtoyan/bootstrap-tokenizer",
+  "authors": [
+    "Rafik Avtoyan <rafik_avtoyan@instigatedesign.com>"
+  ],
+  "description": "A basic bootstrap JavaScript plugin (with semicolons) to provide a tokenizer input field.",
+  "main": ["./js.bootstrap-tokenizer.js","./docs/assets/css/bootstrap-tokenizer.css"],
+  "keywords": [
+    "bootstrap-tokenizer"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
