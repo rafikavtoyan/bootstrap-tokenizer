@@ -70,6 +70,11 @@
             if (value) {
                 var item = new Item(this.channel, value),
                     index = this.list.indexOf(this.input);
+                for(var i = 0; i < this.list.items.length; i++) {
+                    if(this.list.items[i].value == value) {
+                        return this;
+                    }
+                }
                 this.list.add(item, index);
                 this.updateFormInput();
             }
@@ -84,7 +89,7 @@
         },
 
         handleBlur: function () {
-            this.add(this.input.clearValue());
+            // this.add(this.input.clearValue());
             this.$element.removeClass('focused');
         },
 
