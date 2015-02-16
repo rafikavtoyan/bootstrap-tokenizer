@@ -178,7 +178,7 @@
         constructor: Input,
 
         initialize: function () {
-            this.$element = $('<span class="input" contenteditable="true"></span>')
+            this.$element = $('<input class="input" contenteditable="true"></input>')
                 .on('keydown', $.proxy(this.handleKeydown, this));
         },
 
@@ -188,8 +188,8 @@
         },
 
         clearValue: function () {
-            var value = this.$element.text();
-            this.$element.text('');
+            var value = this.$element.val();
+            this.$element.val('');
             return value;
         },
 
@@ -199,7 +199,7 @@
         },
 
         isEmpty: function () {
-            return !this.$element.text();
+            return !this.$element.val();
         },
 
         handleKeydown: function (event) {
