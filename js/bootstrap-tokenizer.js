@@ -54,6 +54,7 @@
             this.list = new List(this.channel)
                 .add(this.input);
             this.$formInput.hide();
+            this.data = this.options.data || {};
             this.$element = $('<div class="tokenizer"></div>')
                 .append(this.list.$element)
                 .on('click', $.proxy(this.handleClick, this))
@@ -67,7 +68,8 @@
         },
 
         add: function (value) {
-            if (value) {
+            var result = $.grep(this.data, function(e){return e.value == value})
+            if (value && result.length != 0) {
                 var item = new Item(this.channel, value),
                     index = this.list.indexOf(this.input);
                 for(var i = 0; i < this.list.items.length; i++) {

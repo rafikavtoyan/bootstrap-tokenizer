@@ -81,6 +81,7 @@ div.tokenizer ul li .input {
   color: #555555;
   white-space: nowrap;
   outline: 0;
+  border:none;
 }
 
 div.tokenizer li span {
