@@ -208,7 +208,7 @@
         },
 
         handleKeydown: function (event) {
-            if ($.inArray(event.keyCode, this.delimiters) > -1) {
+            if ($.inArray(event.keyCode, this.delimiters) > -1 && event.suggestion) {
                 event.stopPropagation();
                 event.preventDefault();
                 this.channel.publish('add', this.clearValue());
@@ -254,7 +254,7 @@
 
     $.fn.tokenizer.defaults = {
         separator: ',',
-        delimiters: [13, 188] // [enter, comma]
+        delimiters: [13] // [enter, comma]
     };
 
     $.fn.tokenizer.Constructor = Tokenizer;
