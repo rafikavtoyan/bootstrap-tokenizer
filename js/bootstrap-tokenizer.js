@@ -54,7 +54,6 @@
             this.list = new List(this.channel)
                 .add(this.input);
             this.$formInput.hide();
-            this.data = this.options.data || {};
             this.$element = $('<div class="tokenizer"></div>')
                 .append(this.list.$element)
                 .on('click', $.proxy(this.handleClick, this))
@@ -68,8 +67,7 @@
         },
 
         add: function (value) {
-            var result = $.grep(this.data, function(e){return e.value == value})
-            if (value && result.length != 0) {
+            if (value) {
                 var item = new Item(this.channel, value),
                     index = this.list.indexOf(this.input);
                 for(var i = 0; i < this.list.items.length; i++) {
@@ -256,7 +254,7 @@
 
     $.fn.tokenizer.defaults = {
         separator: ',',
-        delimiters: [13, 32, 188] // [enter, space, comma]
+        delimiters: [13, 188] // [enter, comma]
     };
 
     $.fn.tokenizer.Constructor = Tokenizer;
